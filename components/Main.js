@@ -24,6 +24,7 @@ export default function Main() {
         <form onSubmit={handleSubmit}>
           <div className="flex p-10">
             <label className="text-xl font-medium">Location:</label>
+            
             <input name="location" className="w-full" />
           </div>
           <div className="flex font-medium text-center">
@@ -46,10 +47,10 @@ export default function Main() {
         </form>
       </div>
       <div>
-        <Table table={formdata} />
+        <Table table={formdata} setFormdata={setFormdata}/>
       </div>
       <div>
-        <ReportTable/>
+        {/* <ReportTable/> */}
       </div>
     </main>
       <Footer length = {formdata.length}/>
