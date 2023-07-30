@@ -8,17 +8,17 @@ export default function ReportTable() {
         <tr>
           <th className="border border-black">location</th>
           {hours.map((hour) => (
-            <th className="border border-black">{hour}</th>
+            <th key={hour} className="border border-black">{hour}</th>
           ))}
           <th className="border border-black">Total</th>
         </tr>
       </thead>
       <tbody>
         {data.map((item) => (
-          <tr>
+          <tr key={item}>
             <td className="border border-black">{item.location}</td>
             {item.time_sale.map((x)=>(
-                <td className="border border-black">{x}</td>
+                <td key={x} className="border border-black">{x}</td>
             ))}
             
 

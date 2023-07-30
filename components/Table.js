@@ -18,7 +18,7 @@ export default function Table({ table: formdata ,setFormdata}) {
           <tr>
             <th className="border border-black">location</th>
             {hours.map((hour) => (
-              <th className="border border-black">{hour}</th>
+              <th key={hour} className="border border-black">{hour}</th>
             ))}
             <th className="border border-black">Total</th>
           </tr>
@@ -26,13 +26,13 @@ export default function Table({ table: formdata ,setFormdata}) {
         <tbody>
           {formdata.map((item,indx) => (
             <tr>
-              <td className="border  border-black">{item.location}
+              <td key={item} className="border  border-black">{item.location}
               <button onClick={()=>handleDlete(indx)}><FiTrash/></button>
               </td>
     
           
             {num.map((x)=>(
-                <td className="border border-black">{x}</td>
+                <td key={x} className="border border-black">{x}</td>
             ))}
                      
         
