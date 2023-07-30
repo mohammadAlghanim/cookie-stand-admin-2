@@ -7,7 +7,7 @@ export default function Table({ table: formdata ,setFormdata}) {
     }
   if (formdata.length == 0) {
     return (
-      <h3 className="w-1/2 mx-auto my-8 text-2xl text-center">
+      <h3  className="w-1/2 mx-auto my-8 text-2xl text-center">
         no Cookie Stand :({" "}
       </h3>
     );
@@ -25,9 +25,9 @@ export default function Table({ table: formdata ,setFormdata}) {
         </thead>
         <tbody>
           {formdata.map((item,indx) => (
-            <tr>
+            <tr key={item}>
               <td key={item} className="border  border-black">{item.location}
-              <button onClick={()=>handleDlete(indx)}><FiTrash/></button>
+              <button key={item} onClick={()=>handleDlete(indx)}><FiTrash/></button>
               </td>
     
           
@@ -43,7 +43,7 @@ export default function Table({ table: formdata ,setFormdata}) {
         <tr>
            <td className="border border-black">Total</td>
            {num.map((x)=>(
-            <td className="border border-black">{x*formdata.length}</td>
+            <td key={num} className="border border-black">{x*formdata.length}</td>
            ))}
         </tr>
       </tfoot>
